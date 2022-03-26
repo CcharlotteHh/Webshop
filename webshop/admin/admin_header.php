@@ -1,4 +1,6 @@
-
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +23,26 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="logout.php">logout</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
+        <?php
+        if(isset($SESSEION['user_name'])){
+          echo' <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="profile.php">Profile</a>
+          </li>';
+          echo' <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
+          </li>';
+        } else{
+          echo' <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="register.php">Register</a>
+          </li>';
+          echo' <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="login.php">Log in</a>
+          </li>';
+
+        }
+        ?>
       </ul>
     </div>
   </div>

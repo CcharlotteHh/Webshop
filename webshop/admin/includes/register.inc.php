@@ -13,7 +13,7 @@ if(isset($_POST['register'])){
 
     //for some reason these are returning as !==false so my error handling doesn't work yet
 
-    if(emptyInputSingup($user_name,$email,$password,$password2)!== false){
+   /* if(emptyInputSingup($user_name,$email,$password,$password2)!== false){
         header('location: ../register.php?error=emptyinput');
         exit();
     }
@@ -32,7 +32,7 @@ if(isset($_POST['register'])){
     if(uidExist($conn,$user_name,$email)!== false){
         header('location: ../register.php?error=usernametaken');
         exit();
-    }
+    } */
 
     createUser($conn,$user_name,$email,$password);// works but can't test without commenting out the above error handling
 }

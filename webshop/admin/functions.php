@@ -131,7 +131,7 @@ function emptyInputLogin($user_name, $password)
     return $result;
 }
 
-function loginUser($conn, $user_name, $password)
+function loginUser($conn, $user_name, $password) //fucntion that checks if user_name and passwords match the ones in the database table users
 {
     $uidExist = uidExist($conn, $user_name, $user_name);
 
