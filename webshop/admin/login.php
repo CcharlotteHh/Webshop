@@ -1,27 +1,10 @@
-<?php
+<?php //functions for the login form
 include 'db.php';
 include 'functions.php';
 
 
-if (isset($_POST['login'])) {
-  $email = $_POST['email'];
-  $password = $_POST['password']; 
-  if (emptyInputLogin($email, $password) !== false) {
-    echo 'empty input';
-    exit();
-}
-//login user
-}
 
 ?>
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,10 +21,10 @@ if (isset($_POST['login'])) {
 <body>
 
   <div class="container">
-    <form action="" method="post">
+    <form action="includes/login.inc.php" method="post">
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+        <label for="exampleInputEmail1" class="form-label">Username/Email</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="user_name">
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -49,5 +32,6 @@ if (isset($_POST['login'])) {
       </div>
       <button type="submit" class="btn btn-primary" name="login">Submit</button>
     </form>
+     
   </div>
 </body>
