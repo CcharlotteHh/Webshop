@@ -14,7 +14,7 @@
 
 html,
 body {
-  height:100h;
+  height:100%;
   background-color: var(--background-color);
   
 }
@@ -23,7 +23,9 @@ body {
   max-width: 960px;
   border: 1px solid white;
   margin: 0 auto;
-  height: 100%;
+  min-height:100%;
+  display:flex;
+  flex-direction: column;
 }
 
 header {
@@ -44,7 +46,6 @@ header {
 }
 .logo{
     position: relative;
-    left: -120px;
 }
 .logo-img {
   height: 50px;
@@ -168,3 +169,67 @@ header {
     transform: scale(1.03);
     transition: all 1s ease;
 }
+
+footer{
+  margin-top:auto;
+  background-color:var(--second-purple);
+  font-size: 20px;
+  display:flex;
+  justify-content: center;
+  color: white;
+} 
+
+/*styling for the product view page */
+.product_view{
+  color: white;
+  display: flex;
+  justify-content:center;
+  min-height: 85.5vh;
+  min-width: 100%;
+  flex-direction: row;
+ 
+  
+}
+
+.product_pictures{
+  min-height: 100%;
+  width: 60%;
+  border: 1px solid white;
+  display: flex;  
+  flex-direction: column;
+}
+
+.product_information{
+  min-height: 100%;
+  width: 40%;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+}
+
+.big_picture{
+  height: 75%;
+  border: 1px solid white;
+}
+
+.big_picture img{
+  height:100%;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+
+.small_picture{
+  display: flex;
+  height:25%;
+  justify-content: center;
+}
+
+.small_picture img{
+  
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+

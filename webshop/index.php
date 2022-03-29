@@ -68,6 +68,7 @@ include 'includes/db.inc.php'; ?>
         </main>
         <footer>
             &copy;
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iste?
         </footer>
     </div>
     <script src="assets/js/script.js"></script>

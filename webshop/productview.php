@@ -41,8 +41,23 @@ include 'includes/db.inc.php'; ?>
                 <div class="menu-line"></div>
             </div>
         </nav>
-        <main>
-  
+        <main class="product_view">
+            <figure class="product_pictures">
+          <div class="big_picture">
+              big picture
+          </div>
+          <div class="small_picture">
+              <img src="assets/img/detailcatbig.jpg" alt="cat">
+              <img src="assets/img/detailcatsmall.jpg" alt="cat">
+              <img src="assets/img/detailcatsmall2.jpg" alt="cat">
+              <img src="assets/img/detailcatbig.jpg" alt="cat">
+          </div>
+            </figure>
+            <article class="product_information">
+                <h2>Cat name here</h2>
+                <p>cat information here</p>
+            </article>
+        </section>
         </main>
         <footer>
             &copy;
