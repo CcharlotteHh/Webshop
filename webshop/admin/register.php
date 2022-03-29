@@ -34,6 +34,7 @@ include 'admin_header.php'
                     <input type="password" id="form3Example4cdg" class="form-control form-control-lg" name="password2" />
                     <label class="form-label" for="form3Example4cdg">Repeat your password</label>
                   </div>
+                  <a href="login.php">Do you have an account already? Click here to log in!</a> 
 
                   <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" name="register">Register</button>

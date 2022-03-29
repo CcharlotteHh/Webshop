@@ -13,11 +13,11 @@ if(isset($_POST['register'])){
 
     //for some reason these are returning as !==false so my error handling doesn't work yet
 
-   /* if(emptyInputSingup($user_name,$email,$password,$password2)!== false){
+    if(emptyInputSingup($user_name,$email,$password,$password2)== false){
         header('location: ../register.php?error=emptyinput');
         exit();
     }
-    if(invalidUid($user_name)!== false){
+    if(invalidUid($user_name) !== false){
         header('location: ../register.php?error=invaliduid');
         exit();
     }
@@ -25,16 +25,16 @@ if(isset($_POST['register'])){
         header('location: ../register.php?error=invalidemail');
         exit();
     }
-    if(pwdMatch($password,$password2)!== false){
+    if(pwdMatch($password,$password2)== false){
         header('location: ../register.php?error=passwordsdontmatch');
         exit();
     }
     if(uidExist($conn,$user_name,$email)!== false){
         header('location: ../register.php?error=usernametaken');
         exit();
-    } */
+    } 
 
-    createUser($conn,$user_name,$email,$password);// works but can't test without commenting out the above error handling
+    createUser($conn,$user_name,$email,$password);
 }
 else{
     header('location: ../register.php');

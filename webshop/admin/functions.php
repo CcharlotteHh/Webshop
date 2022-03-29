@@ -1,24 +1,4 @@
 <?php
-
-function check_login($conn)
-{
-    if (isset($_SESSION['user_id'])) {
-        $id = $_SESSION['user_id'];
-        $query = "SELECT * form users where user_id = '$id' limit 1";
-
-        $result = mysqli_query($conn, $query);
-        if ($result && mysqli_num_rows($result) > 0) {
-            $user_data = mysqli_fetch_assoc($result);
-            return $user_data;
-            echo $user_data;
-        }
-    }
-
-    //redirect to login page
-    header('Location:login.php');
-    die;
-}
-
 function emptyInputSingup($user_name, $email, $password, $password2)
 {
     global $result;
@@ -105,7 +85,7 @@ function createUser($conn, $user_name, $email, $password)
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: register.php?error=statementfailed');
+        header('location: ../register.php?error=statementfailed');
         exit();
     }
 
@@ -114,7 +94,7 @@ function createUser($conn, $user_name, $email, $password)
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header('location: register.php?error=none');
+    header('location: ../register.php?error=none');
     exit();
 }
 
@@ -136,7 +116,7 @@ function loginUser($conn, $user_name, $password) //fucntion that checks if user_
     $uidExist = uidExist($conn, $user_name, $user_name);
 
     if ($uidExist == false) {
-        header("location: login.php?error=wronglogin");
+        header("location: ../login.php?error=wronglogin");
         exit();
     }
 
@@ -146,12 +126,11 @@ function loginUser($conn, $user_name, $password) //fucntion that checks if user_
     if ($checkPassword === false) {
         header("location: login.php?error=wronglogin");
         exit();
-    }
-    else if ($checkPassword === true) {
+    } else if ($checkPassword === true) {
         session_start();
         $_SESSION['id'] = $uidExist["id"];
         $_SESSION['user_name'] = $uidExist['user_name'];
-        header("Location: index.php");
+        header("Location: ../index.php");
         exit();
     }
 }

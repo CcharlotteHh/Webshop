@@ -14,36 +14,3 @@ session_start();
 
 <body>
     <!--navbar for admin pannel-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Webshop</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-        </li>
-        <?php
-        if(isset($SESSEION['user_name'])){
-          echo' <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="profile.php">Profile</a>
-          </li>';
-          echo' <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="logout.php">Logout</a>
-          </li>';
-        } else{
-          echo' <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="register.php">Register</a>
-          </li>';
-          echo' <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="login.php">Log in</a>
-          </li>';
-
-        }
-        ?>
-      </ul>
-    </div>
-  </div>
-</nav>

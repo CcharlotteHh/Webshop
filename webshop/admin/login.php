@@ -21,15 +21,17 @@ include 'admin_header.php'
         <input type="password" class="form-control" id="exampleInputPassword1" name="password">
       </div>
       <button type="submit" class="btn btn-primary" name="login">Submit</button>
-    </form>
-    <?php //error handling login page
-    if (isset($_GET["error"])) {
-      if ($_GET['error'] == "emptyinput") {
-        echo "<p>Please enter all field</p>";
-      } else if ($_GET["error"] == "wronglogin") {
-        echo "<p>incorrect login information/p>";
+      <a href="register.php">Don't have an account already? Click here to register</a> 
+      <?php //error handling login page
+      if (isset($_GET["error"])) {
+        if ($_GET['error'] == "emptyinput") {
+          echo "<p>Please enter all field</p>";
+        } else if ($_GET["error"] == "wronglogin") {
+          echo "<p>incorrect login information</p>";
+        }
       }
-    }
-    ?>
+      ?>
+    </form>
+
   </div>
 </body>

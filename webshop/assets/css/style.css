@@ -14,8 +14,9 @@
 
 html,
 body {
-  height: 100vh;
+  height:100h;
   background-color: var(--background-color);
+  
 }
 
 #container {
@@ -30,6 +31,7 @@ header {
   justify-content: center;
   border: 1px solid white;
   color: #fff;
+  
 }
 
 .navbar {

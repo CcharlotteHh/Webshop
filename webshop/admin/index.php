@@ -1,9 +1,15 @@
 <?php 
 include 'db.php';
+include 'admin_header.php';
 include 'functions.php';
-$user = check_login($conn);
 
-include 'admin_header.php'
+if (!isset($_SESSION['id'])){
+    header("location:login.php");//if session has not been set and user is not logged in they are redirected to login page
+}
+//if user is logged in they can access the index page and will have the possibility to log out
+echo "Login Success";
+
+echo "<a href='logout.php'> Logout</a> "; 
 
 ?>
 
