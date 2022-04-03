@@ -41,6 +41,9 @@ include 'db.php';
         </div>
         -->
         <div class="form-group">
+        <input type="file" class=form-control name="product_image">
+        </div>
+        <div class="form-group">
         <input type="submit" class="form-control btn btn-primary"name="newproduct_submit">
         </div>
     </form>

@@ -31,6 +31,7 @@ header {
   justify-content: center;
   border: 1px solid white;
   color: #fff;
+  
 }
 
 .navbar {
@@ -238,5 +239,37 @@ footer {
   }
   .product-info{
     width: 100%;
+  }
+}
+
+.filter-main{
+  display: flex;
+  width: 100%;
+height: 86%;
+}
+
+.filter{
+  width: 20%;
+  height: 100%;
+  background-color:darkcyan;
+}
+
+.filtered-products{
+  width: 80%;
+  height: 100%;
+  
+}
+
+.filteredproduct{
+  border: 1px solid black;
+  color: white;
+  width:20%;
+  height:25%;
+  background-color:green;
+}
+
+@media all and (max-width: 500px) {
+  .filter-main{
+    flex-wrap: wrap;
   }
 }

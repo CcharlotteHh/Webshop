@@ -42,7 +42,64 @@ include 'includes/db.inc.php';
                 <div class="menu-line"></div>
             </div>
         </nav>
-        
+        <main class="filter-main">
+            <aside class="filter">
+                <form action="" method="GET">
+
+                    <button type="submit" class="custom_button">search</button>
+                    <h4>Color</h4>
+                    <?php
+                    $filter_query = 'SELECT * FROM product';
+                    $result = mysqli_query($conn, $filter_query);
+                    if (mysqli_num_rows($result) > 0) {
+                        foreach ($result as $resultlist) {
+                            $checked = [];
+                            if (isset($_GET['colorlist'])) {
+                                $checked = $_GET['colorlist'];
+                            }
+
+
+                    ?>
+                            <div>
+                                <input type="checkbox" name="colorlist[]" value="<?php echo $resultlist['color'] ?>" <?php if (in_array($resultlist['color'], $checked)) {
+                                                                                                                            echo 'checked';                                                                                                          } ?>>
+                                <?php echo $resultlist['color']; ?>
+                            </div>
+                    <?php
+                        }
+                    } else {
+                        echo "no products found";
+                    }
+                    ?>
+            </aside>
+            </form>
+            <div class="filtered-products">
+                <div class="articles">
+                    <?php
+                    $filter_query = 'SELECT * FROM product';
+                    $result = mysqli_query($conn, $filter_query);
+                    if (mysqli_num_rows($result) > 0) {
+                        foreach ($result as $resultlist) {
+                            $checked = [];
+                            if (isset($_GET['productlist'])) {
+                                $checked = $_GET['productlist'];
+                            }
+
+
+                    ?>
+                            <article class="filteredproduct">
+                                <?php echo $resultlist['name'];?>
+                                <?php echo $resultlist['color'];?>
+                            </article>
+                    <?php
+                        }
+                    } else {
+                        echo "no products found";
+                    }
+                    ?>
+                </div>
+            </div>
+        </main>
         <footer>
             &copy;
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iste?
